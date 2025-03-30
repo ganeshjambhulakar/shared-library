@@ -1,1 +1,3 @@
-vars
+def call(){
+  echo "Hello world"
+}

@@ -6,7 +6,7 @@ def call(String image, String port) {
         sh "docker rm -f ${image} || true"
         
         // Run the Docker container in detached mode with the specified port mapping
-        def runOutput = sh(script: "docker run -d -t -p ${port}:${port} --name ${image} ${image}", returnStdout: true).trim()
+        def runOutput = sh(script: "docker run -d -p ${port}:${port} --name ${image} ${image}", returnStdout: true).trim()
 
         // Output container run details for debugging
         echo "Docker run output: ${runOutput}"
